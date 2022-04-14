@@ -42,10 +42,10 @@ const mailbody = `
     </head>
     <body>
       <p>Hi, ${email}</p>
-      <p>Please verify your email</p><h>
+      <p>Please verify your email to access demo.sujays.me</p><h>
       <p>Find your link below:</p>
-      "<a href=\"http://" + "prod.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "\">" +
-        "http://" + "prod.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "</a>"
+      "<a href=\"http://" + "demo.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "\">" +
+        "http://" + "demo.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "</a>"
         +'</body></html>',
     </body>
 </html>`;
@@ -64,12 +64,12 @@ var params = {
     }, 
     Subject: {
         Charset: "UTF-8",
-        Data: "Verify your Email",
+        Data: "Verify your Email for demo.sujays.me",
       },
     },
-    Source: "sujay@prod.sujays.me",
+    Source: "sujay@demo.sujays.me",
   };
-  console.log("email sent");
+  console.log("Verification Email sent !!!");
   
   return ses.sendEmail(params).promise()
   
