@@ -36,19 +36,17 @@ docClient.put(table, function(err, data) {
 console.log(email + " " +token + "  Parameters set!!");
 
 const mailbody = `
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-      <p>Hi, ${email}</p>
-      <p>Please verify your email to access demo.sujays.me</p><h>
-      <p>Find your link below:</p>
-      "<a href=\"http://" + "demo.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "\">" +
-        "http://" + "demo.sujays.me" + "/v1/user/verifyUserEmail?token=" + token + "&email=" + ${email} + "</a>"
-        +'</body></html>',
-    </body>
-</html>`;
+  <!DOCTYPE html>
+  <html>
+  <head>
+  </head>
+  <body>
+  <p>Hi,</p>
+  <p>You are one step away from completing your registration.</p><h>
+  <p>Please click or copy/paste the Link below in a browser:</p>
+  <a href=http://demo.sujays.me/v1/user/verifyUserEmail?token=${token}&email=${email} >
+  http://demo.sujays.me/v1/user/verifyUserEmail?email=${email}&token=${token}</a>
+  </body></html>`;
 
 var params = {
   
@@ -64,10 +62,10 @@ var params = {
     }, 
     Subject: {
         Charset: "UTF-8",
-        Data: "Verify your Email for demo.sujays.me",
+        Data: "Verify your Email for Activation",
       },
     },
-    Source: "sujay@demo.sujays.me",
+    Source: "noreply@demo.sujays.me",
   };
   console.log("Verification Email sent !!!");
   
