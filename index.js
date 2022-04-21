@@ -44,8 +44,8 @@ const mailbody = `
   <p>Hi,</p>
   <p>You are one step away from completing your registration.</p><h>
   <p>Please click or copy/paste the Link below in a browser:</p>
-  <a href=http://demo.sujays.me/v1/user/verifyUserEmail?token=${token}&email=${email} >
-  http://demo.sujays.me/v1/user/verifyUserEmail?email=${email}&token=${token}</a>
+  <a href=https://demo.sujays.me/v1/user/verifyUserEmail?token=${token}&email=${email} >
+  https://demo.sujays.me/v1/user/verifyUserEmail?email=${email}&token=${token}</a>
   </body></html>`;
 
 var params = {
